@@ -6,9 +6,8 @@ require 'vendor/underscore'
 require 'vendor/titanium_utils'
 
 # global namespace
-App = {}
-App
-  Styles : require 'ui/styles'
+App = 
+  Styles: require 'ui/styles'
 
 # init app
 require('initialize').init()
