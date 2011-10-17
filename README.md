@@ -1,18 +1,6 @@
-Welcome to your Appcelerator Titanium Mobile Project
+This is a boilerplate for CoffeeScript Titanium project.
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
-
-
-
-----------------------------------
-Stuff our legal folk make us say:
-
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
-
-Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
-
+Strongly inspired by
+- [Ti-Gem](https://github.com/revans/Ti)
+- [Different best practices and scary memory leak talks from Codestrong2011](http://www.appcelerator.com/showcase/videos/codestrong2011/)
+- [titanium-jasmine](https://github.com/guilhermechapiewski/titanium-jasmine)

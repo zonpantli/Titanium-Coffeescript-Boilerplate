@@ -1,4 +1,4 @@
-class exports.App.API
+class API
 
   constructor: (@login, @password) ->
 
@@ -59,3 +59,6 @@ class exports.App.API
     @request path, options, authenticated
 
 # Add your API endpoints below
+
+
+exports.API = API

@@ -1,5 +1,6 @@
+var API;
 var __hasProp = Object.prototype.hasOwnProperty;
-exports.App.API = (function() {
+API = (function() {
   function API(login, password) {
     this.login = login;
     this.password = password;
@@ -103,3 +104,4 @@ exports.App.API = (function() {
   };
   return API;
 })();
+exports.API = API;

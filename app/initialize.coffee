@@ -1,11 +1,12 @@
-exports.init = () ->
+exports.initApp = () ->
   
-  Api = require 'api/api'
-  NavigationController = require 'controllers/navigation_controller'
-  HomeWindow = require 'views/home_window'
+  API = require('api/api').API
+  NavigationController = require('controllers/navigation_controller').NavigationController
+  HomeWindow = require('views/home_window').HomeWindow
   
-  App.api = new Api()
+  App.api = new API()
   App.navController = new NavigationController()
   App.navController.open new HomeWindow()
+
   
   

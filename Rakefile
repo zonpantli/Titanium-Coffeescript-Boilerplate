@@ -20,15 +20,34 @@ namespace :build do
 
   desc "Build the app for iPhone and run in simulator"
   task :iphone do
+    File.open("#{PROJECT_ROOT}/Resources/test/enabled.js", 'w') {|f| f.write("")}
     build :device => 'iphone'
   end
   
   desc "Build the app for android and install to attached device / emulator"
   task :android do
+    File.open("#{PROJECT_ROOT}/Resources/test/enabled.js", 'w') {|f| f.write("")}
     build :device => 'android'
   end
 
 end
+
+namespace :test do
+  
+  desc "Run Jasmine tests on iPhone"
+  task :iphone do
+    File.open("#{PROJECT_ROOT}/Resources/test/enabled.js", 'w') {|f| f.write("App.tests_enabled = true;")}
+    build :device => 'iphone'
+  end
+  
+  desc "Run Jasmine tests on Android"
+  task :android do
+    File.open("#{PROJECT_ROOT}/Resources/test/enabled.js", 'w') {|f| f.write("App.tests_enabled = true;")}
+    build :device => 'android'
+  end
+  
+end
+
 
 namespace :clean do
   
@@ -77,7 +96,11 @@ def build(options={})
   puts "Building with Titanium... (DEVICE_TYPE: #{options[:device]})".blue
   case options[:device]
   when 'iphone'
-    sh %Q{bash -c "#{TI_IPHONE_BUILD} run #{PROJECT_ROOT}/ #{IPHONE_SDK_VERSION} #{APP_ID} #{APP_NAME} #{options[:device]} " #{PERL_COLOR_FILTER}}
+    begin
+      sh %Q{bash -c "#{TI_IPHONE_BUILD} run #{PROJECT_ROOT}/ #{IPHONE_SDK_VERSION} #{APP_ID} #{APP_NAME} #{options[:device]} " #{PERL_COLOR_FILTER}}
+    rescue  
+      sh %Q{killall "iPhone Simulator"}
+    end
   when 'android'
     sh %Q{bash -c "#{TI_ANDROID_BUILD} install #{APP_NAME} #{ANDROID_SDK_DIR} #{PROJECT_ROOT}/ #{APP_ID} #{ANDROID_SDK_ID}" #{PERL_COLOR_FILTER}}
   end

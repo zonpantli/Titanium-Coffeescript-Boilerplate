@@ -5,7 +5,7 @@ exports.HomeWindow = function() {
   });
   label = Ti.UI.createLabel({
     color: '#999',
-    text: 'List',
+    text: 'Home',
     font: {
       fontSize: '20dp',
       fontFamily: 'Helvetica Neue'

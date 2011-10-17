@@ -1,4 +1,4 @@
-class exports.NavigationController
+class NavigationController
   
   constructor: () ->
     @windowStack =  []
@@ -45,3 +45,5 @@ class exports.NavigationController
       else
         win.close()
     this.windowStack = [this.windowStack[0]]
+    
+exports.NavigationController = NavigationController

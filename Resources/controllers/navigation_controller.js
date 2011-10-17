@@ -1,4 +1,5 @@
-exports.NavigationController = (function() {
+var NavigationController;
+NavigationController = (function() {
   function NavigationController() {
     this.windowStack = [];
   }
@@ -45,3 +46,4 @@ exports.NavigationController = (function() {
   };
   return NavigationController;
 })();
+exports.NavigationController = NavigationController;

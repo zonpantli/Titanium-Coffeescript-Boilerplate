@@ -1,8 +1,6 @@
-exports.Styles =
+exports.Styles = 
   theme:
     black: '#000'
-    
-  
   
   properties:
     
