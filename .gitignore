@@ -1,0 +1,20 @@
+# For MacOS:
+#
+.DS_Store
+
+# For TextMate
+*.tmproj
+tmtags
+
+build
+tmp
+project-assets
+
+tmp
+Resources/test/enabled.js
+build/android/*
+build/iphone/*
+build.log
+*.mobileprovision
+.redcar*
+Resources/default_app_logo.png
