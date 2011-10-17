@@ -3,7 +3,7 @@
     <deployment-targets>
         <target device="mobileweb">false</target>
         <target device="iphone">true</target>
-        <target device="ipad">true</target>
+        <target device="ipad">false</target>
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
@@ -23,17 +23,23 @@
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
     <guid>bfe3e52f-4423-4553-b682-1e2ed88bc76c</guid>
+    <property name="ti.android.threadstacksize" type="int">32768</property>
+    <!-- See http://jira.appcelerator.org/browse/TIMOB-4941 -->
+    <property name="ti.android.bug2373.disableDetection" type="bool">false</property>
+    <property name="ti.android.bug2373.restartDelay" type="int">500</property>
+    <property name="ti.android.bug2373.finishDelay" type="int">0</property>
+    <property name="ti.android.bug2373.skipAlert" type="bool">false</property>
     <iphone>
         <orientations device="iphone">
             <orientation>Ti.UI.PORTRAIT</orientation>
         </orientations>
-        <orientations device="ipad">
-            <orientation>Ti.UI.PORTRAIT</orientation>
-            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
-        </orientations>
     </iphone>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <tool-api-level>8</tool-api-level>
+        <manifest android:installLocation="preferExternal"
+            android:versionCode="1" android:versionName="1.0">
+            <uses-sdk android:minSdkVersion="7"/>
+        </manifest>
+    </android>
     <modules/>
 </ti:app>
