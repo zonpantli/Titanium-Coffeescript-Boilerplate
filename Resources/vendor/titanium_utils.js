@@ -67,5 +67,5 @@
   
   app.isAndroid = (Titanium.Platform.name == 'android');
   
-})(Barwallet);
+})(App);
 
