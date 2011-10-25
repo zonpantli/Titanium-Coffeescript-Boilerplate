@@ -4,9 +4,9 @@ class API
 
   requestURI: (path, query={}) ->
     # NOTE: Setup your own API endpoint, as below
-    Barwallet.API_ENDPOINT = "http://bar_wallet.com/api/v1"
+    App.API_ENDPOINT = "http://bar_wallet.com/api/v1"
 
-    uri = "#{Barwallet.API_ENDPOINT}#{path}.json?"
+    uri = "#{App.API_ENDPOINT}#{path}.json?"
     for own key, value of query
       uri += "#{ key }=#{ escape(value) }&"
 
