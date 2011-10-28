@@ -6,7 +6,7 @@ App =
   Styles: {}
 
 # require vendor libraries
-require 'vendor/underscore'
+_ = require('vendor/underscore')._
 require 'vendor/titanium_utils'
 
 # require app-wide styles
